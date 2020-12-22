@@ -7,6 +7,13 @@ var connection = mysql.createConnection({
   database : 'something_borrowed'
 });
 
+connection.connect(function(err) {
+  if (err) {
+    return console.error('error: ' + err.message);
+  }
+  console.log('Connected to the MySQL server.');
+});
+
 var selectAll = function(callback) {
   connection.query('SELECT * FROM items', function(err, results, fields) {
     if(err) {
@@ -17,4 +24,4 @@ var selectAll = function(callback) {
   });
 };
 
-module.exports.selectAll = selectAll;
+module.exports.connection = connection;
