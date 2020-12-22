@@ -25,19 +25,23 @@ CREATE TABLE outfits (
   size VARCHAR(3) NOT NULL,
   price INT NOT NULL,
   available BOOLEAN NOT NULL,
-  seller_id INT FOREIGN KEY REFERENCES seller(id)
+  seller_id INT,
+  FOREIGN KEY (seller_id) REFERENCES sellers(id) ON DELETE CASCADE
 );
 
 CREATE TABLE images (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   url VARCHAR(100),
-  outfit_id INT FOREIGN KEY REFERENCES outfits(id)
+  outfit_id INT,
+  FOREIGN KEY (outfit_id) REFERENCES outfits(id) ON DELETE CASCADE
 );
 
 CREATE TABLE checkout (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  user_id INT FOREIGN KEY REFERENCES users(id),
-  outfit_id INT FOREIGN KEY REFERENCES outfits(id)
+  user_id INT,
+  outfit_id INT,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (outfit_id) REFERENCES outfits(id) ON DELETE CASCADE
 );
 
 /*  Execute this file from the command line by typing:
