@@ -1,14 +1,43 @@
-DROP DATABASE IF EXISTS test;
+DROP DATABASE IF EXISTS something_borrowed;
 
-CREATE DATABASE test;
+CREATE DATABASE something_borrowed;
 
-USE test;
+USE something_borrowed;
 
-CREATE TABLE items (
-  id int NOT NULL AUTO_INCREMENT,
-  quantity integer NOT NULL,
-  description varchar(50) NOT NULL,
-  PRIMARY KEY (ID)
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE sellers (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  description VARCHAR(300) NOT NULL
+);
+
+CREATE TABLE outfits (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  type VARCHAR(20) NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  description VARCHAR(300) NOT NULL,
+  size VARCHAR(3) NOT NULL,
+  price INT NOT NULL,
+  available BOOLEAN NOT NULL,
+  seller_id INT FOREIGN KEY REFERENCES seller(id)
+);
+
+CREATE TABLE images (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  url VARCHAR(100),
+  outfit_id INT FOREIGN KEY REFERENCES outfits(id)
+);
+
+CREATE TABLE checkout (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  user_id INT FOREIGN KEY REFERENCES users(id),
+  outfit_id INT FOREIGN KEY REFERENCES outfits(id)
 );
 
 /*  Execute this file from the command line by typing:
