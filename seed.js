@@ -65,10 +65,11 @@ var outfits = (total) => {
 
 var images = (total) => {
   var values = [];
+  var photoSet = [[1, 3], [4, 6], [7, 7], [8, 9], [10, 12], [13, 13], [14, 15], [16, 18], [19, 19], [20, 21], [22, 22], [23, 23], [24, 24], [25, 25], [26, 26], [27, 27]];
   for(var i = 1; i <= total; i++) {
-    var randomNum = Math.floor(Math.random() * 5 + 5)
-    for (var j = 0; j < randomNum; j++) {
-      var url = "url";
+    var setNum = Math.floor(Math.random() * photoSet.length);
+    for (var i = photoSet[setNum][0]; i <= photoSet[setNum][1]; i++) {
+      var url = `https://mvp-images.s3-us-west-1.amazonaws.com/${i}.webp`;
       values.push([url, i]);
     }
   }
