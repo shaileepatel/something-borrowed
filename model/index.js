@@ -1,11 +1,11 @@
 var db = require(__dirname + '/../db');
 
-var getOutfits = (id) => {
-  // var query = `select * from photos where listing_id = ${id}`;
-  // return db.connection.queryAsync(query);
+var getOutfits = (params, callback) => {
+  var query = `select * from outfits where type = "${params.type}"`;
+  db.connection.query(query, callback);
 };
 
-var getOneOutfit = (id) => {
+var getOneOutfit = () => {
   // var query = `select * from fav_categories where user_id = ${id}`;
   // return db.connection.queryAsync(query);
 };
