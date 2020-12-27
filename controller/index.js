@@ -57,7 +57,7 @@ var getOneOutfit = (req, res) => {
       obj.description = outfit.description;
       obj.size = outfit.size;
       obj.price = outfit.price;
-      obj.image = imageUrls;
+      obj.images = imageUrls;
       obj.availability = outfit.available ? true : false;
       obj.sellerInfo = {
         id: outfit.sellerId,
@@ -68,23 +68,6 @@ var getOneOutfit = (req, res) => {
     }
   })
 };
-
-// {
-//   "image": string,
-//   "availability": boolean,
-//   "sellerInfo": {
-//     "id": number,
-//     "name": string,
-//     "description": string
-//   }
-// }
-
-// {
-//   "available": 1,
-//   "seller_id": 94,
-//   "email": "Ulises72@hotmail.com"
-// }
-
 
 module.exports.getOutfits = getOutfits;
 module.exports.getOneOutfit = getOneOutfit;
