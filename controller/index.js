@@ -45,6 +45,10 @@ var getOneOutfit = (req, res) => {
       if (data.length === 0) {
         return res.sendStatus(404);
       }
+      var imageUrls = [];
+      for (var i = 0; i < data.length; i++) {
+        imageUrls.push(data[i].url);
+      }
       var outfit = data[0];
       var obj = {};
       obj.id = outfit.id;
@@ -53,6 +57,7 @@ var getOneOutfit = (req, res) => {
       obj.description = outfit.description;
       obj.size = outfit.size;
       obj.price = outfit.price;
+      obj.image = imageUrls;
       obj.availability = outfit.available ? true : false;
       obj.sellerInfo = {
         id: outfit.sellerId,

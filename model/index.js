@@ -6,7 +6,16 @@ var getOutfits = (params, callback) => {
 };
 
 var getOneOutfit = (id, callback) => {
-  var query = `select o.*, s.id as sellerId, s.name as sellerName, s.description as 'sellerDescription' from outfits as o join sellers as s on (o.seller_id = s.id) where o.id = ${id}`;
+  var query = `
+  select  o.*,
+          s.id as sellerId,
+          s.name as sellerName,
+          s.description as 'sellerDescription',
+          i.url
+  from outfits as o
+  inner join sellers as s on (o.seller_id = s.id)
+  inner join images as i on (i.outfit_id = o.id)
+  where o.id = ${id}`;
   db.connection.query(query, callback);
 };
 
