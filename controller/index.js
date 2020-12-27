@@ -42,20 +42,22 @@ var getOneOutfit = (req, res) => {
       console.log(err);
       res.sendStatus(404);
     } else {
+      if (data.length === 0) {
+        return res.sendStatus(404);
+      }
+      var outfit = data[0];
       var obj = {};
-      for (var i = 0; i < data.length; i++) {
-        obj.id = data[i].id;
-        obj.type = data[i].type;
-        obj.name = data[i].name;
-        obj.description = data[i].description;
-        obj.size = data[i].size;
-        obj.price = data[i].price;
-        obj.availability = data[i].available;
-        obj.sellerInfo = {
-          id: data[i].sellerId,
-          name: data[i].sellerName,
-          description: data[i].sellerDescription
-        }
+      obj.id = outfit.id;
+      obj.type = outfit.type;
+      obj.name = outfit.name;
+      obj.description = outfit.description;
+      obj.size = outfit.size;
+      obj.price = outfit.price;
+      obj.availability = outfit.available ? true : false;
+      obj.sellerInfo = {
+        id: outfit.sellerId,
+        name: outfit.sellerName,
+        description: outfit.sellerDescription
       }
       res.json(obj);
     }
