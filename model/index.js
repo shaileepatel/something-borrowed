@@ -9,7 +9,6 @@ var getOutfits = (params, callback) => {
       queryType = params[key];
     }
   }
-  var queryType = params.type;
   var query = `select * from outfits where ${select} = "${queryType}"`;
   db.connection.query(query, callback);
 };
