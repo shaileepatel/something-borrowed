@@ -1,7 +1,16 @@
 var db = require(__dirname + '/../db');
 
 var getOutfits = (params, callback) => {
-  var query = `select * from outfits where type = "${params.type}"`;
+  var select;
+  var queryType;
+  for(var key in params) {
+    if (params[key] !== undefined) {
+      select = key;
+      queryType = params[key];
+    }
+  }
+  var queryType = params.type;
+  var query = `select * from outfits where ${select} = "${queryType}"`;
   db.connection.query(query, callback);
 };
 
