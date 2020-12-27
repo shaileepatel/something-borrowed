@@ -5,9 +5,9 @@ var getOutfits = (params, callback) => {
   db.connection.query(query, callback);
 };
 
-var getOneOutfit = () => {
-  // var query = `select * from fav_categories where user_id = ${id}`;
-  // return db.connection.queryAsync(query);
+var getOneOutfit = (id, callback) => {
+  var query = `select o.*, s.id as sellerId, s.name as sellerName, s.description as 'sellerDescription' from outfits as o join sellers as s on (o.seller_id = s.id) where o.id = ${id}`;
+  db.connection.query(query, callback);
 };
 
 // var checkIfListingIsFav = (id) => {
