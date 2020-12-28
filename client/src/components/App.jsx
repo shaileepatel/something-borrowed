@@ -1,5 +1,6 @@
 import React from 'react';
 import List from './List.jsx';
+import ImageCarousel from './ImageCarousel.jsx';
 import $ from 'jquery';
 
 class App extends React.Component {
@@ -10,24 +11,25 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    $.ajax({
-      url: '/items',
-      success: (data) => {
-        this.setState({
-          items: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
-  }
+  // componentDidMount() {
+  //   $.ajax({
+  //     url: '/items',
+  //     success: (data) => {
+  //       this.setState({
+  //         items: data
+  //       })
+  //     },
+  //     error: (err) => {
+  //       console.log('err', err);
+  //     }
+  //   });
+  // }
 
   render () {
     return (<div>
       <h1>Item List</h1>
       <List items={this.state.items}/>
+      <ImageCarousel />
     </div>)
   }
 }
