@@ -1,15 +1,30 @@
 var db = require(__dirname + '/../db');
 
 var getOutfits = (params, callback) => {
-  var select;
-  var queryType;
-  for(var key in params) {
-    if (params[key] !== undefined) {
-      select = key;
-      queryType = params[key];
-    }
+  var conditions = '';
+  if (params.type !== undefined) {
+    conditions = `type = "${params.type}"`;
   }
-  var query = `select * from outfits where ${select} = "${queryType}"`;
+  if (params.size !== undefined) {
+    if (conditions.length !== 0) {
+      conditions += ` and `;
+    }
+    conditions += `size = "${params.size}"`;
+  }
+  if (params.minPrice !== undefined) {
+    if (conditions.length !== 0) {
+      conditions += ` and `;
+    }
+    conditions += `price >= ${params.minPrice}`;
+  }
+  if (params.maxPrice !== undefined) {
+    if (conditions.length !== 0) {
+      conditions += ` and `;
+    }
+    conditions += `price <= ${params.maxPrice}`;
+  }
+  var query = `select * from outfits where ${conditions}`;
+  console.log(query);
   db.connection.query(query, callback);
 };
 
