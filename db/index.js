@@ -14,14 +14,4 @@ connection.connect(function(err) {
   console.log('Connected to the MySQL server.');
 });
 
-var selectAll = function(callback) {
-  connection.query('SELECT * FROM items', function(err, results, fields) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, results);
-    }
-  });
-};
-
 module.exports.connection = connection;
