@@ -23,8 +23,11 @@ var getOutfits = (params, callback) => {
     }
     conditions += `price <= ${params.maxPrice}`;
   }
-  var query = `select * from outfits where ${conditions}`;
-  console.log(query);
+  var query = `
+  select  o.*,
+          (select url from images as i where i.outfit_id = o.id limit 1) as url
+  from outfits as o
+  where ${conditions}`;
   db.connection.query(query, callback);
 };
 

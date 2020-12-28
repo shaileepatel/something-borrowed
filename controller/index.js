@@ -12,28 +12,23 @@ var getOutfits = (req, res) => {
       console.log(err);
       res.sendStatus(404);
     } else {
-      res.json(data);
+      var response = [];
+      for (var i = 0; i < data.length; i++) {
+        var obj = {};
+        obj.id = data[i].id;
+        obj.type = data[i].type;
+        obj.name = data[i].name;
+        obj.description = data[i].description;
+        obj.size = data[i].size;
+        obj.images = data[i].url;
+        obj.price = data[i].price;
+        obj.availability = data[i].available ? true : false;
+        response.push(obj);
+      }
+      res.json(response);
     }
   })
 };
-
-// [
-//   {
-//     "id": number,
-//     "type": string,
-//     "name": string,
-//     "description": string,
-//     "image": string,
-//     "size": string,
-//     "price": number,
-//     "availability": boolean,
-//     "sellerInfo": {
-//       "id": number,
-//       "name": string,
-//       "description": string
-//     }
-//   }
-// ]
 
 var getOneOutfit = (req, res) => {
   var id = req.params.id;
