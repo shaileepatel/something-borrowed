@@ -1,11 +1,11 @@
 import React from 'react';
 
-var OutfitsPage = () => {
+var OutfitDetailPage = (props) => {
   return (
     <div>
-      Hello
+      detail page
     </div>
   )
 };
 
-export default OutfitsPage;
+export default OutfitDetailPage;

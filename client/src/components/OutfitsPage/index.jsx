@@ -1,11 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
 
-var OutfitDetailPage = () => {
+var OutfitsPage = (props) => {
   return (
     <div>
-      detail
+      {props.allOutfits.map((outfit, key) =>
+        <Img src = {outfit.images}/>
+      )}
     </div>
   )
 };
 
-export default OutfitDetailPage;
+var Img = styled.img`
+  width: 50%;
+  padding: 5px;
+`;
+
+export default OutfitsPage;
