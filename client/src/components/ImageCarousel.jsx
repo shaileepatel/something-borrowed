@@ -8,6 +8,7 @@ var ImageCarousel = (props) => {
           <li id="carousel__slide1"
               tabIndex="0"
               className="carousel__slide">
+            <img className ="img_details" src = "https://us.anitadongre.com/media/homepage_content/l/o/love_songs_desktop.jpg.mst.webp"/>
             <div className="carousel__snapper">
               <a href="#carousel__slide4"
                 className="carousel__prev">Go to last slide</a>
@@ -18,6 +19,7 @@ var ImageCarousel = (props) => {
           <li id="carousel__slide2"
               tabIndex="0"
               className="carousel__slide">
+            <img className ="img_details" src = "https://us.anitadongre.com/media/homepage_content/r/t/rtw-web.jpg.mst.webp"/>
             <div className="carousel__snapper"></div>
             <a href="#carousel__slide1"
               className="carousel__prev">Go to previous slide</a>
@@ -27,6 +29,7 @@ var ImageCarousel = (props) => {
           <li id="carousel__slide3"
               tabIndex="0"
               className="carousel__slide">
+            <img className ="img_details" src = "https://us.anitadongre.com/media/homepage_content/s/h/sherwani-web.jpg.mst.webp"/>
             <div className="carousel__snapper"></div>
             <a href="#carousel__slide2"
               className="carousel__prev">Go to previous slide</a>
@@ -36,6 +39,7 @@ var ImageCarousel = (props) => {
           <li id="carousel__slide4"
               tabIndex="0"
               className="carousel__slide">
+            <img className ="img_details" src = "https://us.anitadongre.com/media/homepage_content/a/d/ad-silver-web-banner.jpg.mst.webp"/>
             <div className="carousel__snapper"></div>
             <a href="#carousel__slide3"
               className="carousel__prev">Go to previous slide</a>

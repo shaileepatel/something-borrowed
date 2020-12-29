@@ -111,16 +111,6 @@ ol, li {
   background-color: #99f;
 }
 
-.carousel__slide:before {
-  content: counter(item);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%,-40%,70px);
-  color: #fff;
-  font-size: 2em;
-}
-
 .carousel__snapper {
   position: absolute;
   top: 0;
@@ -224,4 +214,9 @@ ol, li {
 
 .carousel::after {
   background-image: url("https://us.anitadongre.com/static/version1599221984/frontend/OM/grad/en_US/images/right-arrow.png");
+}
+
+.img_details {
+  width: 100%;
+  height: 100%;
 }
