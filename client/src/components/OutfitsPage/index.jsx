@@ -1,21 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import Outfit from './Outfit.jsx';
 
 var OutfitsPage = (props) => {
   return (
     <div>
       <button onClick = {props.goBackFromOutfits}>Go Back!</button>
       {props.allOutfits.map((outfit, index) =>
-        <Img src = {outfit.images} onClick = {() => {props.outfitDetail(outfit.id)}} key = {index}/>
+        <Outfit outfit = {outfit} outfitDetail = {props.outfitDetail} key = {index}/>
       )}
     </div>
   )
 };
-
-var Img = styled.img`
-  width: 50%;
-  padding: 5px;
-  cursor: pointer
-`;
 
 export default OutfitsPage;
