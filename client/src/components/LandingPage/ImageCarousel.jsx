@@ -1,8 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
+
 
 var ImageCarousel = (props) => {
   return (
-    <div>
+    <ImageCarouselDiv>
       <section className="carousel" aria-label="Gallery">
         <ol className="carousel__viewport">
           <li id="carousel__slide1"
@@ -68,8 +70,12 @@ var ImageCarousel = (props) => {
           </ol>
         </aside>
       </section>
-    </div>
+    </ImageCarouselDiv>
   );
 };
+
+var ImageCarouselDiv =  styled.div`
+  max-width: 50.5rem;
+`
 
 export default ImageCarousel;

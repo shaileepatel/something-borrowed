@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 var Header = (props) => {
   return (
-    <div>
+    <div className = "mt-3">
       <H1><Img src = "logo.png"/></H1>
     </div>
   );

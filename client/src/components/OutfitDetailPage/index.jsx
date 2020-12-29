@@ -6,7 +6,7 @@ var OutfitDetailPage = (props) => {
   return (
     <div>
       <div>
-        <button onClick = {props.goBackFromOutfitDetail}>Go Back!</button>
+        <button onClick = {props.goBackFromOutfitDetail} className="btn btn-info btn-sm">Go Back!</button>
       </div>
       {props.outfitInfo.images.map((image, index) =>
         <Img src = {image} key = {index}/>
