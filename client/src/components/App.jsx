@@ -12,25 +12,33 @@ class App extends React.Component {
       renderLandingPage: true,
       renderOutfitsPage: false,
       renderOutfitDetailPage: false,
-      allOutfits: []
+      allOutfits: [],
+      outfitInfo: {}
     }
     this.onImgClick =  this.onImgClick.bind(this);
+    this.outfitDetail =  this.outfitDetail.bind(this);
   }
 
-  onImgClick(e) {
+  onImgClick(e, type) {
     if (!e.target.classList.contains('carousel__snapper')) return;
-    this.setState({renderLandingPage: false, renderOutfitsPage: true, renderOutfitDetailPage: false})
-  }
-
-  componentDidMount() {
     axios.get("/api/outfits", {
       params: {
-        type: 'saree'
+        type: type
       }
     })
       .then((res) => {
         console.log(res.data);
-        this.setState({allOutfits: res.data});
+        this.setState({renderLandingPage: false, renderOutfitsPage: true, renderOutfitDetailPage: false, allOutfits: res.data});
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
+  outfitDetail(id) {
+    axios.get(`/api/outfits/${id}`)
+      .then((res) => {
+        this.setState({renderLandingPage: false, renderOutfitsPage: false, renderOutfitDetailPage: true, outfitInfo: res.data});
       })
       .catch((err) => {
         console.log(err);
@@ -41,8 +49,8 @@ class App extends React.Component {
     return (<div>
       <Header />
       {this.state.renderLandingPage ? <LandingPage onImgClick = {this.onImgClick}/> : null}
-      {this.state.renderOutfitsPage ? <OutfitsPage allOutfits = {this.state.allOutfits}/> : null}
-      {this.state.renderOutfitDetailPage ? <OutfitDetailPage /> : null}
+      {this.state.renderOutfitsPage ? <OutfitsPage allOutfits = {this.state.allOutfits} outfitDetail = {this.outfitDetail}/> : null}
+      {this.state.renderOutfitDetailPage ? <OutfitDetailPage outfitInfo = {this.state.outfitInfo}/> : null}
     </div>)
   }
 }

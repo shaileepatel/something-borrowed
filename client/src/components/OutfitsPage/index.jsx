@@ -4,8 +4,8 @@ import styled from 'styled-components';
 var OutfitsPage = (props) => {
   return (
     <div>
-      {props.allOutfits.map((outfit, key) =>
-        <Img src = {outfit.images}/>
+      {props.allOutfits.map((outfit, index) =>
+        <Img src = {outfit.images} onClick = {() => {props.outfitDetail(outfit.id)}} key = {index}/>
       )}
     </div>
   )

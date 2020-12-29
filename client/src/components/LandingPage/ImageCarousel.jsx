@@ -9,7 +9,7 @@ var ImageCarousel = (props) => {
               tabIndex="0"
               className="carousel__slide">
             <img className ="img_details" src = "https://us.anitadongre.com/media/homepage_content/l/o/love_songs_desktop.jpg.mst.webp"/>
-            <div className="carousel__snapper" onClick = {props.onImgClick}>
+            <div className="carousel__snapper" onClick = {(e) => props.onImgClick(e, 'saree')}>
               <a href="#carousel__slide4"
                 className="carousel__prev">Go to last slide</a>
               <a href="#carousel__slide2"
@@ -20,7 +20,7 @@ var ImageCarousel = (props) => {
               tabIndex="0"
               className="carousel__slide">
             <img className ="img_details" src = "https://us.anitadongre.com/media/homepage_content/r/t/rtw-web.jpg.mst.webp"/>
-            <div className="carousel__snapper" onClick = {props.onImgClick}></div>
+            <div className="carousel__snapper" onClick = {(e) => props.onImgClick(e, 'dress')}></div>
             <a href="#carousel__slide1"
               className="carousel__prev">Go to previous slide</a>
             <a href="#carousel__slide3"
@@ -30,7 +30,7 @@ var ImageCarousel = (props) => {
               tabIndex="0"
               className="carousel__slide">
             <img className ="img_details" src = "https://us.anitadongre.com/media/homepage_content/s/h/sherwani-web.jpg.mst.webp"/>
-            <div className="carousel__snapper" onClick = {props.onImgClick}></div>
+            <div className="carousel__snapper" onClick = {(e) => props.onImgClick(e, 'bridesmaid')}></div>
             <a href="#carousel__slide2"
               className="carousel__prev">Go to previous slide</a>
             <a href="#carousel__slide4"
@@ -40,7 +40,7 @@ var ImageCarousel = (props) => {
               tabIndex="0"
               className="carousel__slide">
             <img className ="img_details" src = "https://us.anitadongre.com/media/homepage_content/a/d/ad-silver-web-banner.jpg.mst.webp"/>
-            <div className="carousel__snapper" onClick = {props.onImgClick}></div>
+            <div className="carousel__snapper" onClick = {(e) => props.onImgClick(e, 'gown')}></div>
             <a href="#carousel__slide3"
               className="carousel__prev">Go to previous slide</a>
             <a href="#carousel__slide1"
