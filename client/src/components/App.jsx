@@ -17,6 +17,8 @@ class App extends React.Component {
     }
     this.onImgClick =  this.onImgClick.bind(this);
     this.outfitDetail =  this.outfitDetail.bind(this);
+    this.goBackFromOutfits =  this.goBackFromOutfits.bind(this);
+    this.goBackFromOutfitDetail =  this.goBackFromOutfitDetail.bind(this);
   }
 
   onImgClick(e, type) {
@@ -27,7 +29,6 @@ class App extends React.Component {
       }
     })
       .then((res) => {
-        console.log(res.data);
         this.setState({renderLandingPage: false, renderOutfitsPage: true, renderOutfitDetailPage: false, allOutfits: res.data});
       })
       .catch((err) => {
@@ -45,12 +46,20 @@ class App extends React.Component {
       })
   }
 
+  goBackFromOutfits() {
+    this.setState({renderLandingPage: true, renderOutfitsPage: false, renderOutfitDetailPage: false});
+  }
+
+  goBackFromOutfitDetail() {
+    this.setState({renderLandingPage: false, renderOutfitsPage: true, renderOutfitDetailPage: false});
+  }
+
   render () {
     return (<div>
       <Header />
       {this.state.renderLandingPage ? <LandingPage onImgClick = {this.onImgClick}/> : null}
-      {this.state.renderOutfitsPage ? <OutfitsPage allOutfits = {this.state.allOutfits} outfitDetail = {this.outfitDetail}/> : null}
-      {this.state.renderOutfitDetailPage ? <OutfitDetailPage outfitInfo = {this.state.outfitInfo}/> : null}
+      {this.state.renderOutfitsPage ? <OutfitsPage allOutfits = {this.state.allOutfits} outfitDetail = {this.outfitDetail} goBackFromOutfits = {this.goBackFromOutfits}/> : null}
+      {this.state.renderOutfitDetailPage ? <OutfitDetailPage outfitInfo = {this.state.outfitInfo} goBackFromOutfitDetail = {this.goBackFromOutfitDetail}/> : null}
     </div>)
   }
 }

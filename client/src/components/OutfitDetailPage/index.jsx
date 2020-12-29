@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 
 var OutfitDetailPage = (props) => {
-  console.log(props);
   return (
     <div>
+      <button onClick = {props.goBackFromOutfitDetail}>Go Back!</button>
       {props.outfitInfo.images.map((image, index) =>
         <Img src = {image} key = {index}/>
       )}
