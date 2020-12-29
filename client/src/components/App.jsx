@@ -8,7 +8,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
+      renderLandingPage: true,
+      renderOutfitsPage: false,
+      renderOutfitDetailPage: false
     }
   }
 
@@ -29,9 +31,9 @@ class App extends React.Component {
   render () {
     return (<div>
       <h1>Something Borrowed</h1>
-      <LandingPage />
-      <OutfitsPage />
-      <OutfitDetailPage />
+      {this.state.renderLandingPage ? <LandingPage /> : null}
+      {this.state.renderOutfitsPage ? <OutfitsPage /> : null}
+      {this.state.renderOutfitDetailPage ? <OutfitDetailPage /> : null}
     </div>)
   }
 }
