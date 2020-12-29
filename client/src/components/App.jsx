@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header.jsx';
 import LandingPage from './LandingPage/index.jsx';
 import OutfitsPage from './OutfitsPage/index.jsx';
 import OutfitDetailPage from './OutfitDetailPage/index.jsx';
@@ -9,8 +10,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       renderLandingPage: true,
-      renderOutfitsPage: true,
-      renderOutfitDetailPage: true
+      renderOutfitsPage: false,
+      renderOutfitDetailPage: false
     }
     this.onImgClick =  this.onImgClick.bind(this);
   }
@@ -24,7 +25,7 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <h1>Something Borrowed</h1>
+      <Header />
       {this.state.renderLandingPage ? <LandingPage onImgClick = {this.onImgClick}/> : null}
       {this.state.renderOutfitsPage ? <OutfitsPage /> : null}
       {this.state.renderOutfitDetailPage ? <OutfitDetailPage /> : null}

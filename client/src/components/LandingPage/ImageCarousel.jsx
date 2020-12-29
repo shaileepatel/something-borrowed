@@ -2,7 +2,7 @@ import React from 'react';
 
 var ImageCarousel = (props) => {
   return (
-    <div className>
+    <div>
       <section className="carousel" aria-label="Gallery">
         <ol className="carousel__viewport">
           <li id="carousel__slide1"
