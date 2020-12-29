@@ -1,7 +1,8 @@
 import React from 'react';
-import List from './List.jsx';
-import ImageCarousel from './ImageCarousel.jsx';
-import $ from 'jquery';
+import LandingPage from './LandingPage/index.jsx';
+import OutfitsPage from './OutfitsPage/index.jsx';
+import OutfitDetailPage from './OutfitDetailPage/index.jsx';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,9 +28,10 @@ class App extends React.Component {
 
   render () {
     return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-      <ImageCarousel />
+      <h1>Something Borrowed</h1>
+      <LandingPage />
+      <OutfitsPage />
+      <OutfitDetailPage />
     </div>)
   }
 }
