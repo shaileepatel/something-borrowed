@@ -9,29 +9,23 @@ class App extends React.Component {
     super(props);
     this.state = {
       renderLandingPage: true,
-      renderOutfitsPage: false,
-      renderOutfitDetailPage: false
+      renderOutfitsPage: true,
+      renderOutfitDetailPage: true
     }
+    this.onImgClick =  this.onImgClick.bind(this);
   }
 
-  // componentDidMount() {
-  //   $.ajax({
-  //     url: '/items',
-  //     success: (data) => {
-  //       this.setState({
-  //         items: data
-  //       })
-  //     },
-  //     error: (err) => {
-  //       console.log('err', err);
-  //     }
-  //   });
-  // }
+  onImgClick(e) {
+    if (!e.target.classList.contains('carousel__snapper')) return;
+    this.setState({renderOutfitsPage: false, renderOutfitDetailPage: false})
+  }
+
+  // componentDidMount() {}
 
   render () {
     return (<div>
       <h1>Something Borrowed</h1>
-      {this.state.renderLandingPage ? <LandingPage /> : null}
+      {this.state.renderLandingPage ? <LandingPage onImgClick = {this.onImgClick}/> : null}
       {this.state.renderOutfitsPage ? <OutfitsPage /> : null}
       {this.state.renderOutfitDetailPage ? <OutfitDetailPage /> : null}
     </div>)

@@ -1,10 +1,10 @@
 import React from 'react';
 import ImageCarousel from './ImageCarousel.jsx';
 
-var LandingPage = () => {
+var LandingPage = (props) => {
   return (
     <div>
-      <ImageCarousel />
+      <ImageCarousel onImgClick = {props.onImgClick}/>
     </div>
   )
 };
