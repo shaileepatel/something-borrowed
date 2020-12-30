@@ -9,6 +9,7 @@ var ImageCarousel = (props) => {
           <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         </ol>
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -19,6 +20,9 @@ var ImageCarousel = (props) => {
           </div>
           <div className="carousel-item">
             <img className="d-block w-100" src="https://us.anitadongre.com/media/homepage_content/s/h/sherwani-web.jpg.mst.webp" onClick = {(e) => props.onImgClick(e, 'bridesmaid')}/>
+          </div>
+          <div className="carousel-item">
+            <img className="d-block w-100" src="https://us.anitadongre.com/media/homepage_content/a/d/ad-silver-web-banner.jpg.mst.webp" onClick = {(e) => props.onImgClick(e, 'gown')}/>
           </div>
         </div>
         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -39,8 +43,4 @@ var ImageCarouselDiv =  styled.div`
   margin: auto;
   cursor: pointer;
 `
-
 export default ImageCarousel;
-
-// src = "https://us.anitadongre.com/media/homepage_content/a/d/ad-silver-web-banner.jpg.mst.webp"/>
-//             <div className="carousel__snapper" onClick = {(e) => props.onImgClick(e, 'gown')}
