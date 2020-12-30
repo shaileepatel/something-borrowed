@@ -25,7 +25,6 @@ class App extends React.Component {
   }
 
   onImgClick(e, type) {
-    if (!e.target.classList.contains('carousel__snapper')) return;
     axios.get("/api/outfits", {
       params: {
         type: type
