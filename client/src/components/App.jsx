@@ -13,7 +13,8 @@ class App extends React.Component {
       renderOutfitsPage: false,
       renderOutfitDetailPage: false,
       allOutfits: [],
-      outfitInfo: {}
+      outfitInfo: {},
+      filter: {}
     }
     this.onImgClick =  this.onImgClick.bind(this);
     this.outfitDetail =  this.outfitDetail.bind(this);
@@ -56,10 +57,9 @@ class App extends React.Component {
   }
 
   selectFilter(e) {
+    this.state.filter[e.target.name] = e.target.value;
     axios.get("/api/outfits", {
-      params: {
-        [e.target.name]: e.target.value
-      }
+      params: this.state.filter
     })
       .then((res) => {
         this.setState({renderLandingPage: false, renderOutfitsPage: true, renderOutfitDetailPage: false, allOutfits: res.data});
