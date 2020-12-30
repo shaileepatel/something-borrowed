@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 var Filter = (props) => {
   return (
-    <div>
+    <div className="mt-2">
       <div className="h5">Filter</div>
-      <div>
+      <div onClick = {props.selectFilter}>
         <div className="font-weight-bold">Size</div>
         <div><input type="radio" name="size" value="xs"/> XS</div>
         <div><input type="radio" name="size" value="s"/> S</div>
@@ -14,7 +14,7 @@ var Filter = (props) => {
         <div><input type="radio" name="size" value="xl"/> XL</div>
         <div><input type="radio" name="size" value="xxl"/> XXL</div>
       </div>
-      <div className="mt-2">
+      <div className="mt-2" onClick = {props.selectFilter}>
         <div className="font-weight-bold">Type</div>
         <div><input type="radio" name="type" value="dress"/> Dress</div>
         <div><input type="radio" name="type" value="lengha"/> Lengha</div>

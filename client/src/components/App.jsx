@@ -19,6 +19,7 @@ class App extends React.Component {
     this.outfitDetail =  this.outfitDetail.bind(this);
     this.goBackFromOutfits =  this.goBackFromOutfits.bind(this);
     this.goBackFromOutfitDetail =  this.goBackFromOutfitDetail.bind(this);
+    this.selectFilter =  this.selectFilter.bind(this);
   }
 
   onImgClick(e, type) {
@@ -54,11 +55,25 @@ class App extends React.Component {
     this.setState({renderLandingPage: false, renderOutfitsPage: true, renderOutfitDetailPage: false});
   }
 
+  selectFilter(e) {
+    axios.get("/api/outfits", {
+      params: {
+        [e.target.name]: e.target.value
+      }
+    })
+      .then((res) => {
+        this.setState({renderLandingPage: false, renderOutfitsPage: true, renderOutfitDetailPage: false, allOutfits: res.data});
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
   render () {
     return (<div>
       <Header />
       {this.state.renderLandingPage ? <LandingPage onImgClick = {this.onImgClick}/> : null}
-      {this.state.renderOutfitsPage ? <OutfitsPage allOutfits = {this.state.allOutfits} outfitDetail = {this.outfitDetail} goBackFromOutfits = {this.goBackFromOutfits}/> : null}
+      {this.state.renderOutfitsPage ? <OutfitsPage allOutfits = {this.state.allOutfits} outfitDetail = {this.outfitDetail} goBackFromOutfits = {this.goBackFromOutfits} selectFilter = {this.selectFilter}/> : null}
       {this.state.renderOutfitDetailPage ? <OutfitDetailPage outfitInfo = {this.state.outfitInfo} goBackFromOutfitDetail = {this.goBackFromOutfitDetail}/> : null}
     </div>)
   }
