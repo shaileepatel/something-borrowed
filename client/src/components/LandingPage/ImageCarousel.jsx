@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 var ImageCarousel = (props) => {
   return (
-    <ImageCarouselDiv>
+    <ImageCarouselDiv className="mt-5">
       <section className="carousel" aria-label="Gallery">
         <ol className="carousel__viewport">
           <li id="carousel__slide1"
@@ -76,6 +76,7 @@ var ImageCarousel = (props) => {
 
 var ImageCarouselDiv =  styled.div`
   max-width: 50.5rem;
+  margin: auto
 `
 
 export default ImageCarousel;
