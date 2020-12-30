@@ -12,7 +12,10 @@ var OutfitDetailPage = (props) => {
           )}
         </div>
         <div className="col-6">
-
+          <div className="h3">{props.outfitInfo.name}</div>
+          <div className="h6">${props.outfitInfo.price}</div>
+          <div>{props.outfitInfo.description}.</div>
+          <div>{props.outfitInfo.availability ? "Available" : "Sold Out"}</div>
           <Button className="mt-2">
             <Svg onClick = {props.goBackFromOutfitDetail} viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fillRule="evenodd"></path></Svg>
           </Button>

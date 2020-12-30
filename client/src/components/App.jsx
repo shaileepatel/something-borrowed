@@ -3,6 +3,7 @@ import Header from './Header.jsx';
 import LandingPage from './LandingPage/index.jsx';
 import OutfitsPage from './OutfitsPage/index.jsx';
 import OutfitDetailPage from './OutfitDetailPage/index.jsx';
+import Footer from './Footer.jsx';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -70,12 +71,15 @@ class App extends React.Component {
   }
 
   render () {
-    return (<div>
+    return (
+    <div>
       <Header />
       {this.state.renderLandingPage ? <LandingPage onImgClick = {this.onImgClick}/> : null}
       {this.state.renderOutfitsPage ? <OutfitsPage allOutfits = {this.state.allOutfits} outfitDetail = {this.outfitDetail} goBackFromOutfits = {this.goBackFromOutfits} selectFilter = {this.selectFilter}/> : null}
       {this.state.renderOutfitDetailPage ? <OutfitDetailPage outfitInfo = {this.state.outfitInfo} goBackFromOutfitDetail = {this.goBackFromOutfitDetail}/> : null}
-    </div>)
+      <Footer />
+    </div>
+    )
   }
 }
 
