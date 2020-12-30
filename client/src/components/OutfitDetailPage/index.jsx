@@ -13,7 +13,8 @@ var OutfitDetailPage = (props) => {
         </div>
         <div className="col-6">
           <div className="h3">{props.outfitInfo.name}</div>
-          <div className="h6">${props.outfitInfo.price}</div>
+          <div className="h6 font-weight-bold">${props.outfitInfo.price}</div>
+          <div className="h6">Size: {props.outfitInfo.size.toUpperCase()}</div>
           <div>{props.outfitInfo.description}.</div>
           <div>{props.outfitInfo.availability ? "Available" : "Sold Out"}</div>
           <Button className="mt-2">

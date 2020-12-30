@@ -73,7 +73,7 @@ class App extends React.Component {
   render () {
     return (
     <div>
-      <Header />
+      <Header goToLandingPage = {this.goBackFromOutfits}/>
       {this.state.renderLandingPage ? <LandingPage onImgClick = {this.onImgClick}/> : null}
       {this.state.renderOutfitsPage ? <OutfitsPage allOutfits = {this.state.allOutfits} outfitDetail = {this.outfitDetail} goBackFromOutfits = {this.goBackFromOutfits} selectFilter = {this.selectFilter}/> : null}
       {this.state.renderOutfitDetailPage ? <OutfitDetailPage outfitInfo = {this.state.outfitInfo} goBackFromOutfitDetail = {this.goBackFromOutfitDetail}/> : null}

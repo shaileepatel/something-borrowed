@@ -74,7 +74,7 @@ var ImageCarousel = (props) => {
 };
 
 var ImageCarouselDiv =  styled.div`
-  max-width: 50.5rem;
+  max-width: 70%;
   margin: auto
 `
 
