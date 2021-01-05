@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header.jsx';
+import NavBar from './NavBar.jsx';
 import LandingPage from './LandingPage/index.jsx';
 import OutfitsPage from './OutfitsPage/index.jsx';
 import OutfitDetailPage from './OutfitDetailPage/index.jsx';
@@ -73,6 +74,7 @@ class App extends React.Component {
     return (
     <div>
       <Header goToLandingPage = {this.goBackFromOutfits}/>
+      <NavBar />
       {this.state.renderLandingPage ? <LandingPage onImgClick = {this.onImgClick}/> : null}
       {this.state.renderOutfitsPage ? <OutfitsPage allOutfits = {this.state.allOutfits} outfitDetail = {this.outfitDetail} goBackFromOutfits = {this.goBackFromOutfits} selectFilter = {this.selectFilter}/> : null}
       {this.state.renderOutfitDetailPage ? <OutfitDetailPage outfitInfo = {this.state.outfitInfo} goBackFromOutfitDetail = {this.goBackFromOutfitDetail}/> : null}

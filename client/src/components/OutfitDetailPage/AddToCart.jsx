@@ -26,11 +26,11 @@ var AddToCart = (props) => {
 }
 
 var Div = styled.div`
-  background-color: #e5efe5;
+  background-color: #8eefe6;
 `
 
 var H6 = styled.div`
-  color: #006400;
+  color: black;
 `
 
 export default AddToCart;
