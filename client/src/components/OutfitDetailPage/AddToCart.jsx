@@ -10,9 +10,9 @@ var AddToCart = (props) => {
       {props.outfitInfo.availability ?
         <div className="modal fade" id="addToBagModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered" role="document">
-            <Div className="modal-content">
-              <div className="modal-header">
-                <H6 className="modal-title" id="exampleModalLongTitle">You added {props.outfitInfo.name} to your shopping cart</H6>
+            <Div className="modal-content border-0">
+              <div className="modal-header border-0">
+                <H6 className="modal-title" id="exampleModalLongTitle">You added <span className = "font-weight-bold">{props.outfitInfo.name}</span> to your shopping cart</H6>
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>

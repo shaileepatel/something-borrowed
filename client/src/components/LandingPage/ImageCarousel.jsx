@@ -13,7 +13,7 @@ var ImageCarousel = (props) => {
         </ol>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img className="d-block w-100" src="https://us.anitadongre.com/media/homepage_content/l/o/love_songs_desktop.jpg.mst.webp" onClick = {(e) => props.onImgClick(e, 'saree')}/>
+            <img className="d-block w-100" src="image_carousel1.jpg" onClick = {(e) => props.onImgClick(e, 'gown')}/>
           </div>
           <div className="carousel-item">
             <img className="d-block w-100" src="https://us.anitadongre.com/media/homepage_content/r/t/rtw-web.jpg.mst.webp" onClick = {(e) => props.onImgClick(e, 'dress')}/>
@@ -22,7 +22,7 @@ var ImageCarousel = (props) => {
             <img className="d-block w-100" src="https://us.anitadongre.com/media/homepage_content/s/h/sherwani-web.jpg.mst.webp" onClick = {(e) => props.onImgClick(e, 'bridesmaid')}/>
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src="https://us.anitadongre.com/media/homepage_content/a/d/ad-silver-web-banner.jpg.mst.webp" onClick = {(e) => props.onImgClick(e, 'gown')}/>
+            <img className="d-block w-100" src="https://us.anitadongre.com/media/homepage_content/a/d/ad-silver-web-banner.jpg.mst.webp" onClick = {(e) => props.onImgClick(e, 'saree')}/>
           </div>
         </div>
         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
