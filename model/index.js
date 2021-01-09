@@ -26,8 +26,10 @@ var getOutfits = (params, callback) => {
   var query = `
   select  o.*,
           (select url from images as i where i.outfit_id = o.id limit 1) as url
-  from outfits as o
-  where ${conditions}`;
+  from outfits as o`;
+  if (conditions.length !== 0) {
+    query += ` where ${conditions}`
+  }
   db.connection.query(query, callback);
 };
 
