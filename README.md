@@ -1,6 +1,7 @@
 # Something Borrowed
 
-> SERN clothing rental platform
+> SERN clothing rental platform <br />
+> App Demo: https://youtu.be/wDveVcSHcbE
 
 ## Table of Contents
 
